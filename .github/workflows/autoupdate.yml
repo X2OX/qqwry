@@ -1,0 +1,30 @@
+name: Auto update QQwry
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+
+    - name: Check update
+      run: |
+        go run go.x2ox.com/qqwry/cmd/generate
+        go fmt data/data.gen.go
+        if ( git status | grep data/data.gen.go )
+        then
+          git add .
+          git config user.name "Korudoraito"
+          git config user.email "bot@x2ox.com"
+          git commit -m "Auto Updated"
+          git push
+        fi
