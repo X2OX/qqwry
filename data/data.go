@@ -3,7 +3,6 @@ package data
 import (
 	"encoding/binary"
 	"errors"
-	"fmt"
 	"net"
 
 	"golang.org/x/text/encoding/simplifiedchinese"
@@ -26,7 +25,6 @@ type Cz struct {
 }
 
 func (c *Cz) Find(ip string) *Cz {
-	fmt.Println(ip)
 	return c.FindIP(net.ParseIP(ip))
 }
 
@@ -43,7 +41,6 @@ func (c *Cz) parseIP(ip net.IP) error {
 		c.ip = binary.BigEndian.Uint32(arr)
 		return nil
 	}
-	fmt.Println(ip)
 	return errors.New("ip wrong")
 }
 

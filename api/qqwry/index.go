@@ -7,9 +7,14 @@ import (
 	"strings"
 
 	"go.x2ox.com/qqwry/data"
+	"go.x2ox.com/utils/cors"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
+	cors.CORS(w, r, QQwry)
+}
+
+func QQwry(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 
 	ip := query.Get("ip")
