@@ -19,12 +19,13 @@ jobs:
     - name: Check update
       run: |
         go run go.x2ox.com/qqwry/cmd/generate
-        go fmt data/data.gen.go
-        if ( git status | grep data/data.gen.go )
-        then
-          git add .
-          git config user.name "Korudoraito"
-          git config user.email "bot@x2ox.com"
-          git commit -m "Auto Updated"
-          git push
+        if [[ $? == "0" ]];then
+          go test go.x2ox.com/qqwry/data
+          if [[ $? == "0" ]];then
+            git add .
+            git config user.name "Korudoraito"
+            git config user.email "bot@x2ox.com"
+            git commit -m "Auto Updated"
+            git push
+          fi
         fi

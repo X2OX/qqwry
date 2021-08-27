@@ -14,6 +14,12 @@ const (
 	RedirectMode2 = 0x02
 )
 
+var (
+	start = 6722401
+	end   = 10419045
+	Data  []byte
+)
+
 func New() *Cz { return &Cz{} }
 
 type Cz struct {
