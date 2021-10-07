@@ -1,236 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+ <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="//vv.video.qq.com" />
+  <link rel="dns-prefetch" href="//www.baidu.com" />
+  <link rel="dns-prefetch" href="//www.bing.com" />
+  <link rel="dns-prefetch" href="//www.google.com" />
+  <link rel="dns-prefetch" href="//telegram.org" />
+  <link rel="dns-prefetch" href="//github.com" />
+  <link rel="dns-prefetch" href="//www.youtube.com" />
+  <link rel="dns-prefetch" href="//en.wikipedia.org" />
+  <link rel="dns-prefetch" href="//www.pixiv.net" />
+  <link rel="dns-prefetch" href="//archive.org" />
+  <link rel="dns-prefetch" href="//api.ip.sb" />
+  <link rel="dns-prefetch" href="//2021.ip138.com" />
+  <link rel="dns-prefetch" href="//ipinfo.io" />
+  <link rel="dns-prefetch" href="//ipapi.co" />
+  <link rel="dns-prefetch" href="//myip.ipip.net" />
+  <link rel="dns-prefetch" href="//forge.speedtest.cn" />
+  <link rel="dns-prefetch" href="//qqwry-x2ox.vercel.app" />
+  <link rel="dns-prefetch" href="//restapi.amap.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://vv.video.qq.com" />
+  <link rel="preconnect" href="https://www.baidu.com" />
+  <link rel="preconnect" href="https://www.bing.com" />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://telegram.org" />
+  <link rel="preconnect" href="https://github.com" />
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://en.wikipedia.org" />
+  <link rel="preconnect" href="https://www.pixiv.net" />
+  <link rel="preconnect" href="https://archive.org" />
+  <link rel="preconnect" href="https://api.ip.sb" />
+  <link rel="preconnect" href="https://2021.ip138.com" />
+  <link rel="preconnect" href="https://ipinfo.io" />
+  <link rel="preconnect" href="https://ipapi.co" />
+  <link rel="preconnect" href="https://myip.ipip.net" />
+  <link rel="preconnect" href="https://forge.speedtest.cn" />
+  <link rel="preconnect" href="https://qqwry-x2ox.vercel.app" />
+  <link rel="preconnect" href="https://restapi.amap.com" />
+  <link rel="shortcut icon" type="image/ico" href="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/favicon.ico" />
+  <script src="https://vv.video.qq.com/checktime?otype=json" ></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+  <title>查看我的 IP 地址 | 查询本机 IP 地址及归属地 | X2OX</title>
+  <meta name="description" content="IP 查询 (ip.x2ox.com) 网站，免费查看您当前的 IP 地址 及其 国家和城市信息。多平台 多接口 全方位查询 IP 地址，多种 IP 库同时查询，支持获取 IP 归属地，检查网络连通性，网站可否访问，查询上网的有效互联网IP地址 | IP Address Lookup | What is my IP address | GeoIP API" />
+  <meta content="ip, ip查看, ip地址检测, ip查询, ip测试, ip地址, ip归属地, ip位置, 查ip, 网络连通, geoip, IP 归属地, IPIP, 淘宝IP, X2OX" name="keywords" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <meta property="og:title" content="IP 地址查询 | X2OX" />
+  <meta property="og:site_name" content="IP 地址查询 | X2OX" />
+  <meta content="zh-CN" property="og:locale" />
+  <meta property="og:type" content="Website" />
+  <meta property="og:url" content="https://ip.x2ox.com" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/android-chrome-384x384.png" />
+  <meta property="og:description" content="IP 查询 (ip.x2ox.com) 网站。多接口、全方位查询 IP 地址及其归属地，检查网络是否连通、网站可否访问。" />
+  <meta name="twitter:card" content="summary" />
+ </head>
+<body>
+<div class="container">
+<section class="section">
 
-<meta charset=utf-8>
-<meta content="width=device-width,initial-scale=1" name=viewport>
-<meta content=#000 name=theme-color>
-<title>API: Hitokoto</title>
-<style>
-    html {
-        font-size: 62.5%;
-        box-sizing: border-box;
-        height: -webkit-fill-available
-    }
+<h1 class="title">IP 地址查询</h1>
 
-    *, ::after, ::before {
-        box-sizing: inherit
-    }
-
-    body {
-        font-family: sf pro text, sf pro icons, helvetica neue, helvetica, arial, sans-serif;
-        font-size: 1.6rem;
-        line-height: 1.65;
-        word-break: break-word;
-        font-kerning: auto;
-        font-variant: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        hyphens: auto;
-        height: 100vh;
-        height: -webkit-fill-available;
-        max-height: 100vh;
-        max-height: -webkit-fill-available;
-        margin: 0
-    }
-
-    ::selection {
-        background: #79ffe1
-    }
-
-    ::-moz-selection {
-        background: #79ffe1
-    }
-
-    a {
-        cursor: pointer;
-        color: #0070f3;
-        text-decoration: none;
-        transition: all .2s ease;
-        border-bottom: 1px solid #0000
-    }
-
-    a:hover {
-        border-bottom: 1px solid #0070f3
-    }
-
-    ul {
-        padding: 0;
-        margin-left: 1.5em;
-        list-style-type: none
-    }
-
-    li {
-        margin-bottom: 10px
-    }
-
-    ul li:before {
-        content: '\02013'
-    }
-
-    li:before {
-        display: inline-block;
-        color: #ccc;
-        position: absolute;
-        margin-left: -18px;
-        transition: color .2s ease
-    }
-
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-        font-size: .92em
-    }
-
-    code:after, code:before {
-        content: '`'
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        min-height: 100%
-    }
-
-    main {
-        max-width: 80rem;
-        padding: 4rem 6rem;
-        margin: auto
-    }
-
-    ul {
-        margin-bottom: 32px
-    }
-
-    main p {
-        color: #333
-    }
-
-    .devinfo-container {
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 32px
-    }
-
-    .error-code {
-        font-size: 1.6rem;
-        color: #000;
-        margin: 0 0 1.6rem;
-    }
-
-    .devinfo-line {
-        color: #333
-    }
-
-    .devinfo-line code, code, li {
-        color: #000
-    }
-
-    .devinfo-line:not(:last-child) {
-        margin-bottom: 8px
-    }
-
-    header, footer, footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center
-    }
-
-    header, footer {
-        min-height: 100px;
-        height: 100px
-    }
-
-    header {
-        border-bottom: 1px solid #eaeaea
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-        margin: 0;
-        font-weight: 500
-    }
-
-    header p {
-        font-size: 1.3rem;
-        margin: 0;
-        font-weight: 500
-    }
-
-    footer {
-        border-top: 1px solid #eaeaea
-    }
-
-    footer a {
-        color: #000
-    }
-
-    footer a:hover {
-        border-bottom-color: #0000
-    }
-
-    footer svg {
-        margin-left: .8rem
-    }
-
-    .note {
-        padding: 0 65pt;
-        border-radius: 5px
-    }
-
-    @media (max-width: 500px) {
-        .devinfo-container .devinfo-line code {
-            margin-top: .4rem
-        }
-
-        .devinfo-container .devinfo-line:not(:last-child) {
-            margin-bottom: 1.6rem
-        }
-
-        .devinfo-container {
-            margin-bottom: 0
-        }
-
-        header {
-            flex-direction: column;
-            height: auto;
-            min-height: auto;
-            align-items: flex-start
-        }
-
-        main {
-            padding: 1rem 2rem
-        }
-
-        body {
-            font-size: 1.4rem;
-            line-height: 1.55
-        }
-
-        footer {
-            display: none
-        }
-
-        .note {
-            margin-top: 16px
-        }
-    }
-</style>
-<div class=container>
-    <main>
-        <p class=devinfo-container>
-            <span class=error-code><strong>GET</strong>: <code>https://qqwry-x2ox.vercel.app/api/qqwry?ip=1.1.1.1</code></span>
-            <span class=devinfo-line>美国 APNIC&CloudFlare公共DNS服务器</span>
-        </p>
-        <a href="https://vercel.com?utm_source=x2ox&amp;utm_campaign=oss" rel="nofollow">
-            <div class=note>
-                <img alt="Vercel" rel="nofollow"
-                     src="https://hitokoto.x2ox.com/powered-by-vercel.svg">
-            </div>
-        </a>
-    </main>
+<div class="columns">
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>Speedtest</p></div>
+<div class="message-body"><p id="ip-speedtest"></p><p id="geo-speedtest"></p></div>
+</article>
 </div>
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>IPIP</p></div>
+<div class="message-body"><p id="ip-ipip"></p><p id="geo-ipip"></p></div>
+</article>
+</div>
+</div>
+	 
+	 
+<div class="columns">
+<!-- <div class="column"> -->
+<!-- <article class="message is-primary"> -->
+<!-- <div class="message-header"><p>QQ | 高德</p></div> -->
+<!-- <div class="message-body"><p id="ip-qq"></p><p id="geo-amap"></p></div> -->
+<!-- </article> -->
+<!-- </div> -->
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>IP138</p></div>
+<div class="message-body"><p id="ip-ip138"></p><p id="geo-ip138"></p></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>QQ | 纯真</p></div>
+<div class="message-body"><p id="ip-qq1"></p><p id="geo-cz"></p></div>
+</article>
+</div>
+</div>
+
+<div class="columns">
+<div class="column">
+<article class="message is-info">
+<div class="message-header"><p>IP.SB</p></div>
+<div class="message-body"><p id="ip-ipsb"></p><p id="geo-ipsb"></p></div>
+</article>
+</div>	 
+<div class="column">
+<article class="message is-info">
+<div class="message-header"><p>X2OX | 纯真</p></div>
+<div class="message-body"><p id="ip-qqwry"></p><p id="geo-qqwry"></p></div>
+</article>
+</div>
+</div>
+
+<div class="columns">
+<div class="column">
+<article class="message is-info">
+<div class="message-header"><p>IPAPI.co</p></div>
+<div class="message-body"><p id="ip-ipapi"></p><p id="geo-ipapi"></p></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-info">
+<div class="message-header"><p>IPInfo</p></div>
+<div class="message-body"><p id="ip-ipinfo"></p><p id="geo-ipinfo"></p></div>
+</article>
+</div>
+</div>
+
+<h1 class="title">网站访问检查</h1>
+
+<div class="columns">
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Baidu<i id="http-baidu"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Bing<i id="http-bing"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Google<i id="http-google"></i></div>
+</article>
+</div>
+</div >
+
+<div class="columns">
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Telegram<i id="http-telegram"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">GitHub<i id="http-github"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">YouTube<i id="http-youtube"></i></div>
+</article>
+</div>
+</div >
+
+<div class="columns">
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Wikipedia<i id="http-wikipedia"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Pixiv<i id="http-pixiv"></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Archive<i id="http-archive"></i></div>
+</article>
+</div>
+</div > 
+
+</div>
+</section>
+</div>
+
+<script>
+var $$ = document,
+random = parseInt(1e8 * Math.random()), 
+qqIP = QZOutputJson.ip,
+IP = {
+    get: function(t, e) {
+        return fetch(t, {
+            method: "GET"
+        }).then(function(t) {
+            return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
+        }).then(function(t) {
+            var e = t[0]
+              , n = t[1]
+              , i = t[2]
+              , r = t[3];
+            if (e)
+                return {
+                    ok: e,
+                    status: n,
+                    data: i,
+                    headers: r
+                };
+            throw new Error([e, n, i, r])
+        }).catch(function(t) {
+            throw t
+        })
+    },
+    getAMAP: function() {
+        if(typeof qqIP !== "undefined"){
+            $$.getElementById("ip-qq").innerHTML = qqIP;
+			IP.get("https://restapi.amap.com/v3/ip?key=0113a13c88697dcea6a445584d535837", "json").then(function(t) {
+                $$.getElementById("geo-amap").innerHTML = t.data.province+" "+t.data.city
+            })
+        }
+    },
+	getQQCZ: function() {
+        if(typeof qqIP !== "undefined"){
+            $$.getElementById("ip-qq1").innerHTML = qqIP;
+			IP.get("https://qqwry-x2ox.vercel.app/api/qqwry?ip=" + qqIP, "text").then(function(t) {
+                $$.getElementById("geo-cz").innerHTML = t.data
+            })
+        }
+    },
+    getCZ: function() {
+        IP.get("https://qqwry-x2ox.vercel.app/api/qqwry?type=json", "json").then(function(t) {
+            $$.getElementById("ip-qqwry").innerHTML = t.data.ip
+            $$.getElementById("geo-qqwry").innerHTML = t.data.country+" "+t.data.area
+        })
+    },
+    getSpeedtest: function() {
+        IP.get("https://forge.speedtest.cn/api/location/info?z=" + random, "json").then(function(t) {
+            var e = t.data, n = [e.country];
+            e.province === e.city ? n.push(e.province) : (n.push(e.province),
+            n.push(e.city)),
+            n.push(e.distinct),
+            n.push(e.isp);
+            var i = n.filter(Boolean).join(" ");
+            $$.getElementById("ip-speedtest").innerHTML = e.ip
+            $$.getElementById("geo-speedtest").innerHTML = i
+        })
+    },
+    getIPIP: function() {
+        IP.get("https://myip.ipip.net/?z=" + random, "text").then(function(t) {
+            var e = t.data.replace("当前 IP：", "").split(" 来自于：");
+            $$.getElementById("ip-ipip").innerHTML = e[0];
+            $$.getElementById("geo-ipip").innerHTML = e[1];
+        })
+    },
+	getIpapi: function() {
+        IP.get("https://ipapi.co/json/?z=" + random, "json").then(function(t) {
+            $$.getElementById("ip-ipapi").innerHTML = t.data.ip;
+            $$.getElementById("geo-ipapi").innerHTML = t.data.country_name+" "+t.data.region+" "+t.data.city;
+        })
+    },
+	getIpinfo: function() {
+        IP.get("https://ipinfo.io/json", "json").then(function(t) {
+            $$.getElementById("ip-ipinfo").innerHTML = t.data.ip;
+            $$.getElementById("geo-ipinfo").innerHTML = t.data.country+" "+t.data.region+" "+t.data.city;
+        })
+    },
+	getIP138: function() {
+        IP.get("https://2021.ip138.com/", "text").then(function(t) {
+			var arr = t.data.split(/\r?\n/);
+            $$.getElementById("ip-ip138").innerHTML = arr[13].match(/(\d{1,3}\.){3}\d{1,3}/g)[0];
+            $$.getElementById("geo-ip138").innerHTML = arr[13].split("来自：")[1];
+        })
+    },
+    getIpsb: function() {
+        IP.get("https://api.ip.sb/geoip", "json").then(function(t) {
+            var e = t.data
+              , n = function(t) {
+                return Boolean(t) ? t + " " : " "
+            };
+            $$.getElementById("ip-ipsb").innerHTML = e.ip,
+            $$.getElementById("geo-ipsb").innerHTML = "" + n(e.country) + n(e.region) + n(e.city) + n(e.organization)
+        })
+    }
+},
+HTTP = {
+    checker: function(t, e) {
+        var n = new Image
+          , i = setTimeout(function() {
+            n.onerror = n.onload = null,
+            $$.getElementById(e).innerHTML = '<span class="tag is-warning is-light">连接超时</span>',
+            n.src = null
+        }, 6e3);
+        n.onerror = function() {
+            clearTimeout(i),
+            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">无法访问</span>'
+        },
+        n.onload = function() {
+            clearTimeout(i),
+            $$.getElementById(e).innerHTML = '<span class="tag is-success is-light">连接正常</span>'
+        },
+        n.src = "https://" + t + "/favicon.ico?" + +new Date
+    },
+    runcheck: function() {
+        HTTP.checker("www.baidu.com", "http-baidu"),
+        HTTP.checker("www.bing.com", "http-bing"),
+        HTTP.checker("www.google.com", "http-google"),
+		
+		HTTP.checker("telegram.org", "http-telegram"),
+        HTTP.checker("github.com", "http-github"),
+        HTTP.checker("www.youtube.com", "http-youtube"),
+		
+        HTTP.checker("en.wikipedia.org", "http-wikipedia"),
+        HTTP.checker("www.pixiv.net", "http-pixiv"),
+        HTTP.checker("archive.org", "http-archive")
+    }
+};
+HTTP.runcheck(),
+IP.getSpeedtest(),
+IP.getIpinfo(),
+IP.getIpsb(),
+IP.getIPIP(),
+IP.getIP138(),
+IP.getIpapi(),
+IP.getQQCZ(),
+IP.getCZ();
+</script>
+</body>
 </html>
