@@ -20,7 +20,6 @@
   <link rel="dns-prefetch" href="//ipapi.co" />
   <link rel="dns-prefetch" href="//myip.ipip.net" />
   <link rel="dns-prefetch" href="//forge.speedtest.cn" />
-  <link rel="dns-prefetch" href="//qqwry-x2ox.vercel.app" />
   <link rel="dns-prefetch" href="//restapi.amap.com" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://vv.video.qq.com" />
@@ -39,7 +38,6 @@
   <link rel="preconnect" href="https://ipapi.co" />
   <link rel="preconnect" href="https://myip.ipip.net" />
   <link rel="preconnect" href="https://forge.speedtest.cn" />
-  <link rel="preconnect" href="https://qqwry-x2ox.vercel.app" />
   <link rel="preconnect" href="https://restapi.amap.com" />
   <link rel="shortcut icon" type="image/ico" href="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/favicon.ico" />
   <script src="https://vv.video.qq.com/checktime?otype=json" ></script>
@@ -228,13 +226,13 @@ IP = {
 	getQQCZ: function() {
         if(typeof qqIP !== "undefined"){
             $$.getElementById("ip-qq1").innerHTML = qqIP;
-			IP.get("https://qqwry-x2ox.vercel.app/api/qqwry?ip=" + qqIP, "text").then(function(t) {
+			IP.get("https://ip.x2ox.com/api/qqwry?ip=" + qqIP, "text").then(function(t) {
                 $$.getElementById("geo-cz").innerHTML = t.data
             })
         }
     },
     getCZ: function() {
-        IP.get("https://qqwry-x2ox.vercel.app/api/qqwry?type=json", "json").then(function(t) {
+        IP.get("https://ip.x2ox.com/api/qqwry?type=json", "json").then(function(t) {
             $$.getElementById("ip-qqwry").innerHTML = t.data.ip
             $$.getElementById("geo-qqwry").innerHTML = t.data.country+" "+t.data.area
         })
