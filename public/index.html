@@ -75,8 +75,8 @@
 </article>
 </div>
 </div>
-	 
-	 
+
+
 <div class="columns">
 <!-- <div class="column"> -->
 <!-- <article class="message is-primary"> -->
@@ -127,6 +127,24 @@
 </article>
 </div>
 </div>
+
+<h1 class="title">DNS 检查</h1>
+
+<div class="columns">
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>DNS</p></div>
+<div class="message-body"><p id="dns-ip-ipapi"></p><p id="dns-geo-ipapi"></p></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-primary">
+<div class="message-header"><p>EDNS</p></div>
+<div class="message-body"><p id="edns-ip-ipapi"></p><p id="edns-geo-ipapi"></p></div>
+</article>
+</div>
+</div>
+
 
 <h1 class="title">网站访问检查</h1>
 
@@ -284,6 +302,14 @@ IP = {
             $$.getElementById("ip-ipsb").innerHTML = e.ip,
             $$.getElementById("geo-ipsb").innerHTML = "" + n(e.country) + n(e.region) + n(e.city) + n(e.organization)
         })
+    },
+	getDNS: function() {
+        IP.get("https://edns.ip-api.com/json", "json").then(function(t) {
+            $$.getElementById("dns-ip-ipapi").innerHTML = t.data.dns.ip
+			$$.getElementById("dns-geo-ipapi").innerHTML = t.data.dns.geo
+			$$.getElementById("edns-ip-ipapi").innerHTML = t.data.edns.ip
+			$$.getElementById("edns-geo-ipapi").innerHTML = t.data.edns.geo
+        })
     }
 },
 HTTP = {
@@ -326,7 +352,8 @@ IP.getIPIP(),
 IP.getIP138(),
 IP.getIpapi(),
 IP.getQQCZ(),
-IP.getCZ();
+IP.getCZ(),
+IP.getDNS();
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56ccf42a889448049c8af1bd1f8cbca3"}'></script>
 </body>
