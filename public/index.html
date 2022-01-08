@@ -151,35 +151,17 @@
 <div class="columns">
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Baidu<i id="http-baidu"></i></div>
+<div class="message-header">Baidu<i id="http-baidu"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Bing<i id="http-bing"></i></div>
+<div class="message-header">Bing<i id="http-bing"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Google<i id="http-google"></i></div>
-</article>
-</div>
-</div >
-
-<div class="columns">
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Telegram<i id="http-telegram"></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">GitHub<i id="http-github"></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">YouTube<i id="http-youtube"></i></div>
+<div class="message-header">Google<i id="http-google"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 </div >
@@ -187,17 +169,35 @@
 <div class="columns">
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Wikipedia<i id="http-wikipedia"></i></div>
+<div class="message-header">Telegram<i id="http-telegram"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Pixiv<i id="http-pixiv"></i></div>
+<div class="message-header">GitHub<i id="http-github"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 <div class="column">
 <article class="message is-drak">
-<div class="message-header">Archive<i id="http-archive"></i></div>
+<div class="message-header">YouTube<i id="http-youtube"><span class="tag is-success is-light">waiting</span></i></div>
+</article>
+</div>
+</div >
+
+<div class="columns">
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Wikipedia<i id="http-wikipedia"><span class="tag is-success is-light">waiting</span></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Pixiv<i id="http-pixiv"><span class="tag is-success is-light">waiting</span></i></div>
+</article>
+</div>
+<div class="column">
+<article class="message is-drak">
+<div class="message-header">Archive<i id="http-archive"><span class="tag is-success is-light">waiting</span></i></div>
 </article>
 </div>
 </div > 
@@ -314,28 +314,37 @@ IP = {
 },
 HTTP = {
     checker: function(t, e) {
+        var ct = +new Date;
         var n = new Image
           , i = setTimeout(function() {
             n.onerror = n.onload = null,
-            $$.getElementById(e).innerHTML = '<span class="tag is-warning is-light">连接超时</span>',
+            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">Timeout</span>',
             n.src = null
         }, 6e3);
         n.onerror = function() {
             clearTimeout(i),
-            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">无法访问</span>'
+            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">ClientErr</span>'
         },
         n.onload = function() {
-            clearTimeout(i),
-            $$.getElementById(e).innerHTML = '<span class="tag is-success is-light">连接正常</span>'
+			var reqDuration = +new Date - ct
+            clearTimeout(i)
+			if (reqDuration <= 414) {
+				$$.getElementById(e).innerHTML = '<span class="tag is-success is-light">'+reqDuration+'ms</span>'
+			} else if (reqDuration <= 999) {
+				$$.getElementById(e).innerHTML = '<span class="tag is-warning is-light">'+reqDuration+'ms</span>'
+			} else {
+				$$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">'+reqDuration+'ms</span>'
+			}
+			
         },
-        n.src = "https://" + t + "/favicon.ico?" + +new Date
+        n.src = "https://" + t + "/favicon.ico?" + ct
     },
     runcheck: function() {
         HTTP.checker("www.baidu.com", "http-baidu"),
         HTTP.checker("www.bing.com", "http-bing"),
         HTTP.checker("www.google.com", "http-google"),
 		
-		HTTP.checker("telegram.org", "http-telegram"),
+	HTTP.checker("telegram.org", "http-telegram"),
         HTTP.checker("github.com", "http-github"),
         HTTP.checker("www.youtube.com", "http-youtube"),
 		
@@ -354,7 +363,7 @@ IP.getIpapi(),
 IP.getQQCZ(),
 IP.getCZ(),
 IP.getDNS();
+// TODO https://hitokoto.x2ox.com/api/hitokoto?type=json
 </script>
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6c6a46c167c149c0bd1e07a9653918a9"}'></script>
 </body>
 </html>
