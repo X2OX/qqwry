@@ -13,6 +13,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	cors.CORS(w, r, Info)
 }
 
+func Info(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json;charset=UTF-8")
+	_ = json.NewEncoder(w).Encode(NewRequestInfo(r))
+}
+
 func NewRequestInfo(r *http.Request) *RequestInfo {
 	if r == nil {
 		return nil
