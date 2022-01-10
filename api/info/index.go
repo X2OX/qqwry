@@ -2,10 +2,8 @@ package qqwry
 
 import (
 	"encoding/json"
-	"net"
 	"net/http"
-	"strings"
-
+	
 	"go.x2ox.com/utils/cors"
 )
 
