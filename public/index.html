@@ -1,530 +1,593 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
- <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-dns-prefetch-control" content="on" />
-  <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="//vv.video.qq.com" />
-  <link rel="dns-prefetch" href="//www.baidu.com" />
-  <link rel="dns-prefetch" href="//www.bing.com" />
-  <link rel="dns-prefetch" href="//www.google.com" />
-  <link rel="dns-prefetch" href="//telegram.org" />
-  <link rel="dns-prefetch" href="//github.com" />
-  <link rel="dns-prefetch" href="//www.youtube.com" />
-  <link rel="dns-prefetch" href="//en.wikipedia.org" />
-  <link rel="dns-prefetch" href="//www.pixiv.net" />
-  <link rel="dns-prefetch" href="//archive.org" />
-  <link rel="dns-prefetch" href="//api.ip.sb" />
-  <link rel="dns-prefetch" href="//2021.ip138.com" />
-  <link rel="dns-prefetch" href="//ipinfo.io" />
-  <link rel="dns-prefetch" href="//ipapi.co" />
-  <link rel="dns-prefetch" href="//myip.ipip.net" />
-  <link rel="dns-prefetch" href="//forge.speedtest.cn" />
-  <link rel="dns-prefetch" href="//restapi.amap.com" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://vv.video.qq.com" />
-  <link rel="preconnect" href="https://www.baidu.com" />
-  <link rel="preconnect" href="https://www.bing.com" />
-  <link rel="preconnect" href="https://www.google.com" />
-  <link rel="preconnect" href="https://telegram.org" />
-  <link rel="preconnect" href="https://github.com" />
-  <link rel="preconnect" href="https://www.youtube.com" />
-  <link rel="preconnect" href="https://en.wikipedia.org" />
-  <link rel="preconnect" href="https://www.pixiv.net" />
-  <link rel="preconnect" href="https://archive.org" />
-  <link rel="preconnect" href="https://api.ip.sb" />
-  <link rel="preconnect" href="https://2021.ip138.com" />
-  <link rel="preconnect" href="https://ipinfo.io" />
-  <link rel="preconnect" href="https://ipapi.co" />
-  <link rel="preconnect" href="https://myip.ipip.net" />
-  <link rel="preconnect" href="https://forge.speedtest.cn" />
-  <link rel="preconnect" href="https://restapi.amap.com" />
-  <link rel="shortcut icon" type="image/ico" href="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/favicon.ico" />
-  <script src="https://vv.video.qq.com/checktime?otype=json" ></script>
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
-  <title>查看我的 IP 地址 | 查询本机 IP 地址及归属地 | X2OX</title>
-  <meta name="description" content="IP 查询 (ip.x2ox.com) 网站，免费查看您当前的 IP 地址 及其 国家和城市信息。多平台 多接口 全方位查询 IP 地址，多种 IP 库同时查询，支持获取 IP 归属地，检查网络连通性，网站可否访问，查询上网的有效互联网IP地址 | IP Address Lookup | What is my IP address | GeoIP API" />
-  <meta content="ip, ip查看, ip地址检测, ip查询, ip测试, ip地址, ip归属地, ip位置, 查ip, 网络连通, geoip, IP 归属地, IPIP, 淘宝IP, X2OX" name="keywords" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <meta property="og:title" content="IP 地址查询 | X2OX" />
-  <meta property="og:site_name" content="IP 地址查询 | X2OX" />
-  <meta content="zh-CN" property="og:locale" />
-  <meta property="og:type" content="Website" />
-  <meta property="og:url" content="https://ip.x2ox.com" />
-  <meta property="og:image" content="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/android-chrome-384x384.png" />
-  <meta property="og:description" content="IP 查询 (ip.x2ox.com) 网站。多接口、全方位查询 IP 地址及其归属地，检查网络是否连通、网站可否访问。" />
-  <meta name="twitter:card" content="summary" />
- </head>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on"/>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+    <link rel="dns-prefetch" href="//vv.video.qq.com"/>
+    <link rel="dns-prefetch" href="//www.baidu.com"/>
+    <link rel="dns-prefetch" href="//www.bing.com"/>
+    <link rel="dns-prefetch" href="//www.google.com"/>
+    <link rel="dns-prefetch" href="//telegram.org"/>
+    <link rel="dns-prefetch" href="//github.com"/>
+    <link rel="dns-prefetch" href="//www.youtube.com"/>
+    <link rel="dns-prefetch" href="//en.wikipedia.org"/>
+    <link rel="dns-prefetch" href="//www.pixiv.net"/>
+    <link rel="dns-prefetch" href="//archive.org"/>
+    <link rel="dns-prefetch" href="//api.ip.sb"/>
+    <link rel="dns-prefetch" href="//2021.ip138.com"/>
+    <link rel="dns-prefetch" href="//ipinfo.io"/>
+    <link rel="dns-prefetch" href="//ipapi.co"/>
+    <link rel="dns-prefetch" href="//myip.ipip.net"/>
+    <link rel="dns-prefetch" href="//forge.speedtest.cn"/>
+    <link rel="dns-prefetch" href="//restapi.amap.com"/>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+    <link rel="preconnect" href="https://vv.video.qq.com"/>
+    <link rel="preconnect" href="https://www.baidu.com"/>
+    <link rel="preconnect" href="https://www.bing.com"/>
+    <link rel="preconnect" href="https://www.google.com"/>
+    <link rel="preconnect" href="https://telegram.org"/>
+    <link rel="preconnect" href="https://github.com"/>
+    <link rel="preconnect" href="https://www.youtube.com"/>
+    <link rel="preconnect" href="https://en.wikipedia.org"/>
+    <link rel="preconnect" href="https://www.pixiv.net"/>
+    <link rel="preconnect" href="https://archive.org"/>
+    <link rel="preconnect" href="https://api.ip.sb"/>
+    <link rel="preconnect" href="https://2021.ip138.com"/>
+    <link rel="preconnect" href="https://ipinfo.io"/>
+    <link rel="preconnect" href="https://ipapi.co"/>
+    <link rel="preconnect" href="https://myip.ipip.net"/>
+    <link rel="preconnect" href="https://forge.speedtest.cn"/>
+    <link rel="preconnect" href="https://restapi.amap.com"/>
+    <link rel="shortcut icon" type="image/ico" href="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/favicon.ico"/>
+    <script src="https://vv.video.qq.com/checktime?otype=json"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui"/>
+    <title>查看我的 IP 地址 | 查询本机 IP 地址及归属地 | X2OX</title>
+    <meta name="description"
+          content="IP 查询 (ip.x2ox.com) 网站，免费查看您当前的 IP 地址 及其 国家和城市信息。多平台 多接口 全方位查询 IP 地址，多种 IP 库同时查询，支持获取 IP 归属地，检查网络连通性，网站可否访问，查询上网的有效互联网IP地址 | IP Address Lookup | What is my IP address | GeoIP API"/>
+    <meta content="ip, ip查看, ip地址检测, ip查询, ip测试, ip地址, ip归属地, ip位置, 查ip, 网络连通, geoip, IP 归属地, IPIP, 淘宝IP, X2OX"
+          name="keywords"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+    <meta property="og:title" content="IP 地址查询 | X2OX"/>
+    <meta property="og:site_name" content="IP 地址查询 | X2OX"/>
+    <meta content="zh-CN" property="og:locale"/>
+    <meta property="og:type" content="Website"/>
+    <meta property="og:url" content="https://ip.x2ox.com"/>
+    <meta property="og:image" content="https://cdn.jsdelivr.net/npm/x2oxi@1.0.0/android-chrome-384x384.png"/>
+    <meta property="og:description" content="IP 查询 (ip.x2ox.com) 网站。多接口、全方位查询 IP 地址及其归属地，检查网络是否连通、网站可否访问。"/>
+    <meta name="twitter:card" content="summary"/>
+</head>
+
 <body>
+
 <div class="container">
-<section class="section">
+    <section class="section">
+        <h1 class="title">IP 地址查询</h1>
+        <div class="field has-addons">
+            <p class="control">
+                <span class="select">
+                    <select>
+                        <option>IP</option>
+                        <option>Domain</option>
+                        <option>IPv4</option>
+                        <option>IPv6</option>
+                        <!-- TODO: 添加 v4 v6 的区分，部分 API 不支持 v6 -->
+                    </select>
+                </span>
+            </p>
+            <div class="control is-expanded">
+                <input class="input" type="text" placeholder="请输入 IP 地址" id="hitokoto"
+                       onkeydown="enterKeySubmit(event)">
+            </div>
+            <div class="control">
+                <a class="button is-info" style="width: 100%;" onclick="clickQuery()">查询</a>
+            </div>
+        </div>
 
-<h1 class="title">IP 地址查询</h1>
+        <div id="searchResult"></div>
 
-<div class="field has-addons">
-  <p class="control"><span class="select"><select>
-	<option>IP</option><option>IPv4</option><option>IPv6</option><!-- TODO: 添加 v4 v6 的区分，部分 API 不支持 v6 -->
-  </select></span></p>
-  <div class="control is-expanded">
-    <input class="input" type="text" placeholder="请输入 IP 地址" id="hitokoto" onkeydown="enterKeySubmit(event)">
-  </div>
-  <div class="control" >
-    <a class="button is-info" style="width: 100%;" onclick="clickQuery()">查询</a>
-  </div>
-</div>
-
-<div id="searchResult"></div>
-
-<div class="columns">
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>Speedtest</p></div>
-<div class="message-body"><p id="ip-speedtest"></p><p id="geo-speedtest"></p></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>IPIP</p></div>
-<div class="message-body"><p id="ip-ipip"></p><p id="geo-ipip"></p></div>
-</article>
-</div>
-</div>
-
-
-<div class="columns">
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>IP138</p></div>
-<div class="message-body"><p id="ip-ip138"></p><p id="geo-ip138"></p></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>QQ | 纯真</p></div>
-<div class="message-body"><p id="ip-qq1"></p><p id="geo-cz"></p></div>
-</article>
-</div>
-</div>
-
-<div class="columns">
-<div class="column">
-<article class="message is-info">
-<div class="message-header"><p>IP.SB</p></div>
-<div class="message-body"><p id="ip-ipsb"></p><p id="geo-ipsb"></p></div>
-</article>
-</div>	 
-<div class="column">
-<article class="message is-info">
-<div class="message-header"><p>X2OX | 纯真</p></div>
-<div class="message-body"><p id="ip-qqwry"></p><p id="geo-qqwry"></p></div>
-</article>
-</div>
-</div>
-
-<div class="columns">
-<div class="column">
-<article class="message is-info">
-<div class="message-header"><p>IPAPI.co</p></div>
-<div class="message-body"><p id="ip-ipapi"></p><p id="geo-ipapi"></p></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-info">
-<div class="message-header"><p>IPInfo</p></div>
-<div class="message-body"><p id="ip-ipinfo"></p><p id="geo-ipinfo"></p></div>
-</article>
-</div>
-</div>
-
-<h1 class="title">DNS 检查</h1>
-
-<div class="columns">
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>DNS</p></div>
-<div class="message-body"><p id="dns-ip-ipapi"></p><p id="dns-geo-ipapi"></p></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-primary">
-<div class="message-header"><p>EDNS</p></div>
-<div class="message-body"><p id="edns-ip-ipapi"></p><p id="edns-geo-ipapi"></p></div>
-</article>
-</div>
-</div>
+        <div class="columns">
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>Speedtest</p></div>
+                    <div class="message-body"><p id="ip-speedtest"></p>
+                        <p id="geo-speedtest"></p></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>IPIP</p></div>
+                    <div class="message-body"><p id="ip-ipip"></p>
+                        <p id="geo-ipip"></p></div>
+                </article>
+            </div>
+        </div>
 
 
-<h1 class="title">网站访问检查</h1>
+        <div class="columns">
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>IP138</p></div>
+                    <div class="message-body"><p id="ip-ip138"></p>
+                        <p id="geo-ip138"></p></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>QQ | 纯真</p></div>
+                    <div class="message-body"><p id="ip-qq1"></p>
+                        <p id="geo-cz"></p></div>
+                </article>
+            </div>
+        </div>
 
-<div class="columns">
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Baidu<i id="http-baidu"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Bing<i id="http-bing"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Google<i id="http-google"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-</div >
+        <div class="columns">
+            <div class="column">
+                <article class="message is-info">
+                    <div class="message-header"><p>IP.SB</p></div>
+                    <div class="message-body"><p id="ip-ipsb"></p>
+                        <p id="geo-ipsb"></p></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-info">
+                    <div class="message-header"><p>X2OX | 纯真</p></div>
+                    <div class="message-body"><p id="ip-qqwry"></p>
+                        <p id="geo-qqwry"></p></div>
+                </article>
+            </div>
+        </div>
 
-<div class="columns">
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Telegram<i id="http-telegram"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">GitHub<i id="http-github"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">YouTube<i id="http-youtube"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-</div >
+        <div class="columns">
+            <div class="column">
+                <article class="message is-info">
+                    <div class="message-header"><p>IPAPI.co</p></div>
+                    <div class="message-body"><p id="ip-ipapi"></p>
+                        <p id="geo-ipapi"></p></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-info">
+                    <div class="message-header"><p>IPInfo</p></div>
+                    <div class="message-body"><p id="ip-ipinfo"></p>
+                        <p id="geo-ipinfo"></p></div>
+                </article>
+            </div>
+        </div>
 
-<div class="columns">
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Wikipedia<i id="http-wikipedia"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Pixiv<i id="http-pixiv"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-<div class="column">
-<article class="message is-drak">
-<div class="message-header">Archive<i id="http-archive"><span class="tag is-success is-light">waiting</span></i></div>
-</article>
-</div>
-</div > 
+        <h1 class="title">DNS 检查</h1>
 
-</div>
-</section>
+        <div class="columns">
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>DNS</p></div>
+                    <div class="message-body"><p id="dns-ip-ipapi"></p>
+                        <p id="dns-geo-ipapi"></p></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-primary">
+                    <div class="message-header"><p>EDNS</p></div>
+                    <div class="message-body"><p id="edns-ip-ipapi"></p>
+                        <p id="edns-geo-ipapi"></p></div>
+                </article>
+            </div>
+        </div>
+
+
+        <h1 class="title">网站访问检查</h1>
+
+        <div class="columns">
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Baidu<i id="http-baidu"><span
+                            class="tag is-success is-light">waiting</span></i></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Bing<i id="http-bing"><span
+                            class="tag is-success is-light">waiting</span></i></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Google<i id="http-google"><span
+                            class="tag is-success is-light">waiting</span></i></div>
+                </article>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Telegram<i id="http-telegram"><span class="tag is-success is-light">waiting</span></i>
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">GitHub<i id="http-github"><span
+                            class="tag is-success is-light">waiting</span></i></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">YouTube<i id="http-youtube"><span class="tag is-success is-light">waiting</span></i>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Wikipedia<i id="http-wikipedia"><span class="tag is-success is-light">waiting</span></i>
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Pixiv<i id="http-pixiv"><span
+                            class="tag is-success is-light">waiting</span></i></div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="message is-drak">
+                    <div class="message-header">Archive<i id="http-archive"><span class="tag is-success is-light">waiting</span></i>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </section>
 </div>
 
 <script>
-var $$ = document,
-random = parseInt(1e8 * Math.random()), 
-qqIP = QZOutputJson.ip,
-IP = {
-    get: function(t, e) {
-        return fetch(t, {
-            method: "GET"
-        }).then(function(t) {
-            return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
-        }).then(function(t) {
-            var e = t[0]
-              , n = t[1]
-              , i = t[2]
-              , r = t[3];
-            if (e)
-                return {
-                    ok: e,
-                    status: n,
-                    data: i,
-                    headers: r
-                };
-            throw new Error([e, n, i, r])
-        }).catch(function(t) {
-            throw t
-        })
-    },
-    getAMAP: function() {
-        if(typeof qqIP !== "undefined"){
-            $$.getElementById("ip-qq").innerHTML = qqIP;
-			IP.get("https://restapi.amap.com/v3/ip?key=0113a13c88697dcea6a445584d535837", "json").then(function(t) {
-                $$.getElementById("geo-amap").innerHTML = t.data.province+" "+t.data.city
-            })
-        }
-    },
-	getQQCZ: function() {
-        if(typeof qqIP !== "undefined"){
-            $$.getElementById("ip-qq1").innerHTML = qqIP;
-			IP.get("https://ip.x2ox.com/api/qqwry?ip=" + qqIP, "text").then(function(t) {
-                $$.getElementById("geo-cz").innerHTML = t.data
-            })
-        }
-    },
-    getCZ: function() {
-        IP.get("https://ip.x2ox.com/api/qqwry?type=json", "json").then(function(t) {
-            $$.getElementById("ip-qqwry").innerHTML = t.data.ip
-            $$.getElementById("geo-qqwry").innerHTML = t.data.country+" "+t.data.area
-        })
-    },
-    getSpeedtest: function() {
-        IP.get("https://forge.speedtest.cn/api/location/info?z=" + random, "json").then(function(t) {
-            var e = t.data, n = [e.country];
-            e.province === e.city ? n.push(e.province) : (n.push(e.province),
-            n.push(e.city)),
-            n.push(e.distinct),
-            n.push(e.isp);
-            var i = n.filter(Boolean).join(" ");
-            $$.getElementById("ip-speedtest").innerHTML = e.ip
-            $$.getElementById("geo-speedtest").innerHTML = i
-        })
-    },
-    getIPIP: function() {
-        IP.get("https://myip.ipip.net/?z=" + random, "text").then(function(t) {
-            var e = t.data.replace("当前 IP：", "").split(" 来自于：");
-            $$.getElementById("ip-ipip").innerHTML = e[0];
-            $$.getElementById("geo-ipip").innerHTML = e[1];
-        })
-    },
-	getIpapi: function() {
-        IP.get("https://ipapi.co/json/?z=" + random, "json").then(function(t) {
-            $$.getElementById("ip-ipapi").innerHTML = t.data.ip;
-            $$.getElementById("geo-ipapi").innerHTML = t.data.country_name+" "+t.data.region+" "+t.data.city;
-        })
-    },
-	getIpinfo: function() {
-        IP.get("https://ipinfo.io/json", "json").then(function(t) {
-            $$.getElementById("ip-ipinfo").innerHTML = t.data.ip;
-            $$.getElementById("geo-ipinfo").innerHTML = t.data.country+" "+t.data.region+" "+t.data.city;
-        })
-    },
-	getIP138: function() {
-        IP.get("https://2021.ip138.com/", "text").then(function(t) {
-			var arr = t.data.split(/\r?\n/);
-            $$.getElementById("ip-ip138").innerHTML = arr[13].match(/(\d{1,3}\.){3}\d{1,3}/g)[0];
-            $$.getElementById("geo-ip138").innerHTML = arr[13].split("来自：")[1];
-        })
-    },
-    getIpsb: function() {
-        IP.get("https://api.ip.sb/geoip", "json").then(function(t) {
-            var e = t.data
-              , n = function(t) {
-                return Boolean(t) ? t + " " : " "
-            };
-            $$.getElementById("ip-ipsb").innerHTML = e.ip,
-            $$.getElementById("geo-ipsb").innerHTML = "" + n(e.country) + n(e.region) + n(e.city) + n(e.organization)
-        })
-    },
-	getDNS: function() {
-        IP.get("https://edns.ip-api.com/json", "json").then(function(t) {
-            $$.getElementById("dns-ip-ipapi").innerHTML = t.data.dns.ip
-			$$.getElementById("dns-geo-ipapi").innerHTML = t.data.dns.geo
-			if ( t.data.edns !== null){
-			$$.getElementById("edns-ip-ipapi").innerHTML = t.data.edns.ip
-			$$.getElementById("edns-geo-ipapi").innerHTML = t.data.edns.geo
-			}
-        })
-    }
-},
-HTTP = {
-    checker: function(t, e) {
-        var ct = +new Date;
-        var n = new Image
-          , i = setTimeout(function() {
-            n.onerror = n.onload = null,
-            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">Timeout</span>',
-            n.src = null
-        }, 6e3);
-        n.onerror = function() {
-            clearTimeout(i),
-            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">ClientErr</span>'
+    const $$ = document,
+        random = parseInt(1e8 * Math.random()),
+        qqIP = QZOutputJson.ip,
+        IP = {
+            get: function (t, e) {
+                return fetch(t, {
+                    method: "GET"
+                }).then(function (t) {
+                    return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
+                }).then(function (t) {
+                    var e = t[0]
+                        , n = t[1]
+                        , i = t[2]
+                        , r = t[3];
+                    if (e)
+                        return {
+                            ok: e,
+                            status: n,
+                            data: i,
+                            headers: r
+                        };
+                    throw new Error([e, n, i, r])
+                }).catch(function (t) {
+                    throw t
+                })
+            },
+            getAMAP: function () {
+                if (typeof qqIP !== "undefined") {
+                    $$.getElementById("ip-qq").innerHTML = qqIP;
+                    IP.get("https://restapi.amap.com/v3/ip?key=0113a13c88697dcea6a445584d535837", "json").then(function (t) {
+                        $$.getElementById("geo-amap").innerHTML = t.data.province + " " + t.data.city
+                    })
+                }
+            },
+            getQQCZ: function () {
+                if (typeof qqIP !== "undefined") {
+                    $$.getElementById("ip-qq1").innerHTML = qqIP;
+                    IP.get("https://ip.x2ox.com/api/qqwry?ip=" + qqIP, "text").then(function (t) {
+                        $$.getElementById("geo-cz").innerHTML = t.data
+                    })
+                }
+            },
+            getCZ: function () {
+                IP.get("https://ip.x2ox.com/api/qqwry?type=json", "json").then(function (t) {
+                    $$.getElementById("ip-qqwry").innerHTML = t.data.ip
+                    $$.getElementById("geo-qqwry").innerHTML = t.data.country + " " + t.data.area
+                })
+            },
+            getSpeedtest: function () {
+                IP.get("https://forge.speedtest.cn/api/location/info?z=" + random, "json").then(function (t) {
+                    var e = t.data, n = [e.country];
+                    e.province === e.city ? n.push(e.province) : (n.push(e.province),
+                        n.push(e.city)),
+                        n.push(e.distinct),
+                        n.push(e.isp);
+                    var i = n.filter(Boolean).join(" ");
+                    $$.getElementById("ip-speedtest").innerHTML = e.ip
+                    $$.getElementById("geo-speedtest").innerHTML = i
+                })
+            },
+            getIPIP: function () {
+                IP.get("https://myip.ipip.net/?z=" + random, "text").then(function (t) {
+                    var e = t.data.replace("当前 IP：", "").split(" 来自于：");
+                    $$.getElementById("ip-ipip").innerHTML = e[0];
+                    $$.getElementById("geo-ipip").innerHTML = e[1];
+                })
+            },
+            getIpapi: function () {
+                IP.get("https://ipapi.co/json/?z=" + random, "json").then(function (t) {
+                    $$.getElementById("ip-ipapi").innerHTML = t.data.ip;
+                    $$.getElementById("geo-ipapi").innerHTML = t.data.country_name + " " + t.data.region + " " + t.data.city;
+                })
+            },
+            getIpinfo: function () {
+                IP.get("https://ipinfo.io/json", "json").then(function (t) {
+                    $$.getElementById("ip-ipinfo").innerHTML = t.data.ip;
+                    $$.getElementById("geo-ipinfo").innerHTML = t.data.country + " " + t.data.region + " " + t.data.city;
+                })
+            },
+            getIP138: function () {
+                IP.get("https://2021.ip138.com/", "text").then(function (t) {
+                    var arr = t.data.split(/\r?\n/);
+                    $$.getElementById("ip-ip138").innerHTML = arr[13].match(/(\d{1,3}\.){3}\d{1,3}/g)[0];
+                    $$.getElementById("geo-ip138").innerHTML = arr[13].split("来自：")[1];
+                })
+            },
+            getIpsb: function () {
+                IP.get("https://api.ip.sb/geoip", "json").then(function (t) {
+                    var e = t.data
+                        , n = function (t) {
+                        return Boolean(t) ? t + " " : " "
+                    };
+                    $$.getElementById("ip-ipsb").innerHTML = e.ip,
+                        $$.getElementById("geo-ipsb").innerHTML = "" + n(e.country) + n(e.region) + n(e.city) + n(e.organization)
+                })
+            },
+            getDNS: function () {
+                IP.get("https://edns.ip-api.com/json", "json").then(function (t) {
+                    $$.getElementById("dns-ip-ipapi").innerHTML = t.data.dns.ip
+                    $$.getElementById("dns-geo-ipapi").innerHTML = t.data.dns.geo
+                    if (t.data.edns !== null) {
+                        $$.getElementById("edns-ip-ipapi").innerHTML = t.data.edns.ip
+                        $$.getElementById("edns-geo-ipapi").innerHTML = t.data.edns.geo
+                    }
+                })
+            }
         },
-        n.onload = function() {
-			var reqDuration = +new Date - ct
-            clearTimeout(i)
-			if (reqDuration <= 414) {
-				$$.getElementById(e).innerHTML = '<span class="tag is-success is-light">'+reqDuration+'ms</span>'
-			} else if (reqDuration <= 999) {
-				$$.getElementById(e).innerHTML = '<span class="tag is-warning is-light">'+reqDuration+'ms</span>'
-			} else {
-				$$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">'+reqDuration+'ms</span>'
-			}
-			
-        },
-        n.src = "https://" + t + "/favicon.ico?" + ct
-    },
-    runcheck: function() {
-        HTTP.checker("www.baidu.com", "http-baidu"),
-        HTTP.checker("www.bing.com", "http-bing"),
-        HTTP.checker("www.google.com", "http-google"),
-		
-	HTTP.checker("telegram.org", "http-telegram"),
-        HTTP.checker("github.com", "http-github"),
-        HTTP.checker("www.youtube.com", "http-youtube"),
-		
-        HTTP.checker("en.wikipedia.org", "http-wikipedia"),
-        HTTP.checker("www.pixiv.net", "http-pixiv"),
-        HTTP.checker("archive.org", "http-archive")
-    }
-};
-HTTP.runcheck(),
-IP.getSpeedtest(),
-IP.getIpinfo(),
-IP.getIpsb(),
-IP.getIPIP(),
-IP.getIP138(),
-IP.getIpapi(),
-IP.getQQCZ(),
-IP.getCZ(),
-IP.getDNS();
+        HTTP = {
+            checker: function (t, e) {
+                var ct = +new Date;
+                var n = new Image
+                    , i = setTimeout(function () {
+                    n.onerror = n.onload = null,
+                        $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">Timeout</span>',
+                        n.src = null
+                }, 6e3);
+                n.onerror = function () {
+                    clearTimeout(i),
+                        $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">ClientErr</span>'
+                },
+                    n.onload = function () {
+                        var reqDuration = +new Date - ct
+                        clearTimeout(i)
+                        if (reqDuration <= 414) {
+                            $$.getElementById(e).innerHTML = '<span class="tag is-success is-light">' + reqDuration + 'ms</span>'
+                        } else if (reqDuration <= 999) {
+                            $$.getElementById(e).innerHTML = '<span class="tag is-warning is-light">' + reqDuration + 'ms</span>'
+                        } else {
+                            $$.getElementById(e).innerHTML = '<span class="tag is-danger is-light">' + reqDuration + 'ms</span>'
+                        }
+
+                    },
+                    n.src = "https://" + t + "/favicon.ico?" + ct
+            },
+            runcheck: function () {
+                HTTP.checker("www.baidu.com", "http-baidu"),
+                    HTTP.checker("www.bing.com", "http-bing"),
+                    HTTP.checker("www.google.com", "http-google"),
+
+                    HTTP.checker("telegram.org", "http-telegram"),
+                    HTTP.checker("github.com", "http-github"),
+                    HTTP.checker("www.youtube.com", "http-youtube"),
+
+                    HTTP.checker("en.wikipedia.org", "http-wikipedia"),
+                    HTTP.checker("www.pixiv.net", "http-pixiv"),
+                    HTTP.checker("archive.org", "http-archive")
+            }
+        };
+    HTTP.runcheck(),
+        IP.getSpeedtest(),
+        IP.getIpinfo(),
+        IP.getIpsb(),
+        IP.getIPIP(),
+        IP.getIP138(),
+        IP.getIpapi(),
+        IP.getQQCZ(),
+        IP.getCZ(),
+        IP.getDNS();
 
 </script>
 
 <script>
-Hitokoto = {
-    get: function(t, e) {
-        return fetch(t, {
-            method: "GET"
-        }).then(function(t) {
-            return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
-        }).then(function(t) {
-            var e = t[0]
-              , n = t[1]
-              , i = t[2]
-              , r = t[3];
-            if (e)
-                return {
-                    ok: e,
-                    status: n,
-                    data: i,
-                    headers: r
-                };
-            throw new Error([e, n, i, r])
-        }).catch(function(t) {
-            throw t
-        })
-    },
-    getHitokoto: function() {
-        IP.get("https://hitokoto.x2ox.com/api/hitokoto", "text").then(function(t) {
-            document.getElementById("hitokoto").placeholder = t.data
-        })
+    const Hitokoto = {
+        get: function (t, e) {
+            return fetch(t, {
+                method: "GET"
+            }).then(function (t) {
+                return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
+            }).then(function (t) {
+                var e = t[0]
+                    , n = t[1]
+                    , i = t[2]
+                    , r = t[3];
+                if (e)
+                    return {
+                        ok: e,
+                        status: n,
+                        data: i,
+                        headers: r
+                    };
+                throw new Error([e, n, i, r])
+            }).catch(function (t) {
+                throw t
+            })
+        },
+        getHitokoto: function () {
+            Hitokoto.get("https://hitokoto.x2ox.com/api/hitokoto", "text").then(function (t) {
+                document.getElementById("hitokoto").placeholder = t.data
+            })
+        }
     }
-}
 
-Hitokoto.getHitokoto();
+    Hitokoto.getHitokoto();
 </script>
 
 
- <script>
-QueryIP = {
-    get: function(t, e) {
-        return fetch(t, {
-            method: "GET"
-        }).then(function(t) {
-            return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
-        }).then(function(t) {
-            var e = t[0]
-              , n = t[1]
-              , i = t[2]
-              , r = t[3];
-            if (e)
-                return {
-                    ok: e,
-                    status: n,
-                    data: i,
-                    headers: r
-                };
-            throw new Error([e, n, i, r])
-        }).catch(function(t) {
-            throw t
-        })
-    },
-	getX2ox: function(ipAddr, qid) {
-		var ct = +new Date;
-        QueryIP.get("https://ip.x2ox.com/api/qqwry?type=json&ip=" + ipAddr, "json").then(function(t) {
-		    var reqDuration = +new Date - ct
-			addQueryResult(qid,["X2OX",t.data.area,t.data.country,"","","","",reqDuration+"ms"])
-        })
-    },
-	getIpApiCo: function(ipAddr, qid) {
-		var ct = +new Date;
-        QueryIP.get("https://ipapi.co/" + ipAddr + "/json/", "json").then(function(t) {
-		    var reqDuration = +new Date - ct
-			addQueryResult(qid,["IPAPI.co",t.data.asn,t.data.country_name,
-			t.data.region,t.data.city,t.data.timezone,t.data.longitude+", "+t.data.latitude,
-			reqDuration+"ms"])
-        })
-    },
-	getIpInfoIo: function(ipAddr, qid) {
-		var ct = +new Date;
-        QueryIP.get("https://ipinfo.io/" + ipAddr + "/json", "json").then(function(t) {
-		    var reqDuration = +new Date - ct
-			addQueryResult(qid,["IPINFO.io",t.data.org,t.data.country,
-			t.data.region,t.data.city,"","",reqDuration+"ms"])
-        })
-    },
-    getIpSb: function(ipAddr, qid) {
-		var ct = +new Date;
-        QueryIP.get("https://api.ip.sb/geoip/" + ipAddr, "json").then(function(t) {
-		    var reqDuration = +new Date - ct
-			addQueryResult(qid,["IP.sb",t.data.asn+" "+t.data.asn_organization,t.data.country,
-			t.data.region,t.data.city,t.data.timezone,t.data.longitude+", "+t.data.latitude,
-			reqDuration+"ms"])
-        })
+<script>
+    QueryIP = {
+        get: function (t, e) {
+            return fetch(t, {
+                method: "GET"
+            }).then(function (t) {
+                return "text" === e ? Promise.all([t.ok, t.status, t.text(), t.headers]) : Promise.all([t.ok, t.status, t.json(), t.headers])
+            }).then(function (t) {
+                var e = t[0]
+                    , n = t[1]
+                    , i = t[2]
+                    , r = t[3];
+                if (e)
+                    return {
+                        ok: e,
+                        status: n,
+                        data: i,
+                        headers: r
+                    };
+                throw new Error([e, n, i, r])
+            }).catch(function (t) {
+                throw t
+            })
+        },
+        getX2ox: function (ipAddr, qid) {
+            let ct = +new Date;
+            QueryIP.get("https://ip.x2ox.com/api/qqwry?type=json&ip=" + ipAddr, "json").then(function (t) {
+                let reqDuration = +new Date - ct
+                addQueryResult(qid, ["X2OX", t.data.area, t.data.country, "", "", "", "", reqDuration + "ms"])
+            })
+        },
+        getIpApiCo: function (ipAddr, qid) {
+            let ct = +new Date;
+            QueryIP.get("https://ipapi.co/" + ipAddr + "/json/", "json").then(function (t) {
+                let reqDuration = +new Date - ct
+                addQueryResult(qid, ["IPAPI.co", t.data.asn, t.data.country_name,
+                    t.data.region, t.data.city, t.data.timezone, t.data.longitude + ", " + t.data.latitude,
+                    reqDuration + "ms"])
+            })
+        },
+        getIpInfoIo: function (ipAddr, qid) {
+            let ct = +new Date;
+            QueryIP.get("https://ipinfo.io/" + ipAddr + "/json", "json").then(function (t) {
+                let reqDuration = +new Date - ct
+                addQueryResult(qid, ["IPINFO.io", t.data.org, t.data.country,
+                    t.data.region, t.data.city, "", "", reqDuration + "ms"])
+            })
+        },
+        getIpSb: function (ipAddr, qid) {
+            let ct = +new Date;
+            QueryIP.get("https://api.ip.sb/geoip/" + ipAddr, "json").then(function (t) {
+                let reqDuration = +new Date - ct
+                addQueryResult(qid, ["IP.sb", t.data.asn + " " + t.data.asn_organization, t.data.country,
+                    t.data.region, t.data.city, t.data.timezone, t.data.longitude + ", " + t.data.latitude,
+                    reqDuration + "ms"])
+            })
+        },
+
+        parseDNS: function (domain, qid) {
+            QueryIP.get("https://ip.x2ox.com/api/dns?type=a&name=" + domain, "text").then(function (t) {
+                let qr = document.getElementById(qid + "-bd");
+                if (qr !== null) {
+                    qr.innerHTML = "<pre style=\"background-color: #f5f5f5;\">" + t.data + "</pre>"
+                }
+                let pattern = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/g;
+                let ipAddr = t.data.match(pattern)[0];
+                if (ipAddr !== null) {
+                    QueryIP.getX2ox(ipAddr, qid)
+                    QueryIP.getIpApiCo(ipAddr, qid)
+                    QueryIP.getIpInfoIo(ipAddr, qid)
+                    QueryIP.getIpSb(ipAddr, qid)
+                }
+
+            })
+        }
     }
-}
 
-function deleteQueryResult(searchResultID) {
-    var sr = document.getElementById(searchResultID);
-    if ( sr !== null ){sr.parentNode.removeChild(sr)}
-}
+    function deleteQueryResult(searchResultID) {
+        let sr = document.getElementById(searchResultID);
+        if (sr !== null) {
+            sr.parentNode.removeChild(sr)
+        }
+    }
 
-function randomString() {    
-    var t = "cywanxhvksbzgidumojtefrlp", a = t.length, n = "";
-    for (i = 0; i < 10; i++) n += t.charAt(Math.floor(Math.random() * a));
-    return n
-}
+    function randomString() {
+        let t = "cywanxhvksbzgidumojtefrlp", a = t.length, n = "";
+        for (let i = 0; i < 10; i++) n += t.charAt(Math.floor(Math.random() * a));
+        return n
+    }
 
-function addQueryResult(qid, data) {
-    var qr = document.getElementById(qid+"-tb");
-    if ( qr !== null ){
-		var node = document.createElement("tr");
-		qr.appendChild(node);
-		node.innerHTML="<tr><td>" + data[0] + "</td><td>" + data[1] + "</td><td>" + data[2] + "</td><td>" + data[3] + 
-		"</td><td>" + data[4] + "</td><td>" + data[5] + "</td><td>" + data[6] + "</td><td>" + data[7] + "</td></tr>";
-	}
-}
+    function addQueryResult(qid, data) {
+        let qr = document.getElementById(qid + "-tb");
+        if (qr !== null) {
+            let node = document.createElement("tr");
+            qr.appendChild(node);
+            node.innerHTML = "<tr><td>" + data[0] + "</td><td>" + data[1] + "</td><td>" + data[2] + "</td><td>" + data[3] +
+                "</td><td>" + data[4] + "</td><td>" + data[5] + "</td><td>" + data[6] + "</td><td>" + data[7] + "</td></tr>";
+        }
+    }
 
-function queryIP(ipAddr) {
-	var qid = randomString(), sr = document.getElementById("searchResult");
-	var node = document.createElement("div");
-	sr.appendChild(node);
+    function queryIP(ipAddr) {
+        let qid = randomString(), sr = document.getElementById("searchResult");
+        let node = document.createElement("div");
+        sr.appendChild(node);
 
-	node.innerHTML ="<div id=\""+qid+"\"><article class=\"message\"><div class=\"message-header\"><p>"+
-ipAddr+"</p><button class=\"delete\" onclick=\"deleteQueryResult(\'"+qid+
-"\')\"></button></div><div class=\"message-body\"><table class=\"table is-hoverable "+
-"is-fullwidth\" style=\"background-color: #f5f5f5;\"><thead><tr><th>数据源</th>"+
-"<th>ASN</th><th>Country</th><th>Region</th><th>City</th><th>Timezone</th><th>Lon, "+
-"Lat</th><th>QueryTime</th></tr></thead><tbody id=\""+qid+"-tb\"></tbody></table></div></article></div>"
+        node.innerHTML = "<div id=\"" + qid + "\"><article class=\"message\"><div class=\"message-header\"><p>" +
+            ipAddr + "</p><button class=\"delete\" onclick=\"deleteQueryResult(\'" + qid +
+            "\')\"></button></div><div class=\"message-body\"><div id=\"" + qid + "-bd\"></div><table class=\"table is-hoverable " +
+            "is-fullwidth\" style=\"background-color: #f5f5f5;\"><thead><tr><th>数据源</th>" +
+            "<th>ASN</th><th>Country</th><th>Region</th><th>City</th><th>Timezone</th><th>Lon, " +
+            "Lat</th><th>QueryTime</th></tr></thead><tbody id=\"" + qid + "-tb\"></tbody></table></div></article></div>"
 
-	QueryIP.getX2ox(ipAddr, qid)
-	QueryIP.getIpApiCo(ipAddr, qid)
-	QueryIP.getIpInfoIo(ipAddr, qid)
-	QueryIP.getIpSb(ipAddr, qid)
-}
+        if (isDomain(ipAddr)) {
+            QueryIP.parseDNS(ipAddr, qid)
+        } else {
+            QueryIP.getX2ox(ipAddr, qid)
+            QueryIP.getIpApiCo(ipAddr, qid)
+            QueryIP.getIpInfoIo(ipAddr, qid)
+            QueryIP.getIpSb(ipAddr, qid)
+        }
+    }
 
-function clickQuery() {
-	var ipAddr = document.getElementById("hitokoto").value;
-	if (ipAddr == "" || ipAddr.length < 7) {
-		return
-	}
-	queryIP(ipAddr);
-	Hitokoto.getHitokoto();
-	document.getElementById("hitokoto").value="";
-}
+    function clickQuery() {
+        let ipAddr = document.getElementById("hitokoto").value;
+        if (ipAddr === "") {// 空输入
+            return
+        }
+        if (!isDomain(ipAddr) && ipAddr.length < 7) {
+            console.log("???")
+            return
+        }
 
-function enterKeySubmit(e) {
-	var evt = window.event || e; 
-	if (evt.keyCode == 13){
-		clickQuery()
-	}
-}
+        queryIP(ipAddr);
+        Hitokoto.getHitokoto();
+        document.getElementById("hitokoto").value = "";
+    }
+
+    function isDomain(s) {
+        const p = /[a-z]/i;
+        return p.test(s);
+    }
+
+    function enterKeySubmit(e) {
+        let evt = window.event || e;
+        if (evt.keyCode === 13) {
+            clickQuery()
+        }
+    }
 </script>
 
 </body>
