@@ -324,7 +324,7 @@
                 })
             },
             getIP138: function () {
-                IP.get("https://2021.ip138.com/", "text").then(function (t) {
+                IP.get("https://2022.ip138.com/", "text").then(function (t) {
                     var arr = t.data.split(/\r?\n/);
                     $$.getElementById("ip-ip138").innerHTML = arr[13].match(/(\d{1,3}\.){3}\d{1,3}/g)[0];
                     $$.getElementById("geo-ip138").innerHTML = arr[13].split("来自：")[1];
