@@ -1,8 +1,9 @@
 name: Auto update QQwry
 
 on:
-  schedule:
-    - cron: '0 1 * * *'
+  push:
+    tags:
+      - v*
 
 jobs:
 
