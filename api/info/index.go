@@ -1,4 +1,4 @@
-package qqwry
+package info
 
 import (
 	"crypto/tls"
