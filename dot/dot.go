@@ -26,7 +26,7 @@ func NewParser(name, rrType string) *Parser {
 
 func (p *Parser) Parse(provider string) *Result {
 	var (
-		r   = &Result{provider: provider, msg: new(dns.Msg)}
+		r   = &Result{provider: provider, Msg: new(dns.Msg)}
 		msg = new(dns.Msg)
 		c   = dns.Client{Net: "tcp-tls"}
 	)
@@ -35,30 +35,30 @@ func (p *Parser) Parse(provider string) *Result {
 	}
 	msg.SetQuestion(p.Name, p.RRType)
 
-	r.msg, r.rtt, r.err = c.Exchange(msg, providers[r.provider]+":853")
+	r.Msg, r.rtt, r.err = c.Exchange(msg, providers[r.provider]+":853")
 	return r
 }
 
 type Result struct {
 	provider string
-	msg      *dns.Msg
+	Msg      *dns.Msg
 	rtt      time.Duration
 	err      error
 }
 
 func (d *Result) MarshalJSON() ([]byte, error) {
-	return json.Marshal(d.msg)
+	return json.Marshal(d.Msg)
 }
 
 func (d *Result) String() string {
 	if d.err != nil {
 		return fmt.Sprintf(outputTpl, d.provider, d.rtt, d.err.Error())
 	}
-	return fmt.Sprintf(outputTpl, d.provider, d.rtt, d.msg)
+	return fmt.Sprintf(outputTpl, d.provider, d.rtt, d.Msg)
 }
 
 func (d *Result) IP() string {
-	for _, rr := range d.msg.Answer {
+	for _, rr := range d.Msg.Answer {
 		switch rr := rr.(type) {
 		case *dns.A:
 			return rr.A.String()
